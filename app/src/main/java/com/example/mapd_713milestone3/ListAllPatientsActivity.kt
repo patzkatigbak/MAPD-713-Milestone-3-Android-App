@@ -25,7 +25,7 @@ class ListAllPatientsActivity : AppCompatActivity() {
         listViewPatients.adapter = arrayAdapter
 
 
-        val url = "https://lit-castle-65770.herokuapp.com/patients"
+        val url = "https://mapd714server.onrender.com/patients"
         val queue = Volley.newRequestQueue(this)
 
         var currentIDString = ""

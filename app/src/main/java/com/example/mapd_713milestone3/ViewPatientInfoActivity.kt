@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
@@ -18,19 +19,16 @@ class ViewPatientInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_patient_info)
 
-
-
-
     }
 
     fun viewButton_Clicked(v: View)
     {
 
-//        val patientID = "6372ee315a808562d394838d"
         var editTextPatientID = findViewById<EditText>(R.id.editTextPatientID)
         val patientID = editTextPatientID.text.toString().trim()
 
-        val url = "https://lit-castle-65770.herokuapp.com/patients/$patientID"
+        val url = "https://mapd714server.onrender.com/patients/$patientID"
+       // val url = "http://127.0.0.1:3000/patients/$patientID"
         val queue = Volley.newRequestQueue(this)
 
         val textViewFirstName = findViewById<TextView>(R.id.textViewFirstName)
@@ -96,7 +94,10 @@ class ViewPatientInfoActivity : AppCompatActivity() {
                 }
 
 
-            }, Response.ErrorListener {  })
+            }, Response.ErrorListener {
+
+                println(it.toString())
+            })
 
         queue.add(request)
 
