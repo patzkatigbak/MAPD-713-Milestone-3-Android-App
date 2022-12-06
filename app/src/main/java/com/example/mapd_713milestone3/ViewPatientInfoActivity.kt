@@ -27,7 +27,7 @@ class ViewPatientInfoActivity : AppCompatActivity() {
         var editTextPatientID = findViewById<EditText>(R.id.editTextPatientID)
         val patientID = editTextPatientID.text.toString().trim()
 
-        val url = "https://mapd714server.onrender.com/patients/$patientID"
+        val url = "https://patsurikukoserver.herokuapp.com/patients/$patientID"
        // val url = "http://127.0.0.1:3000/patients/$patientID"
         val queue = Volley.newRequestQueue(this)
 

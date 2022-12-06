@@ -21,7 +21,7 @@ import java.nio.charset.Charset
 
 class AddPatientActivity : AppCompatActivity() {
 
-    val postPatient = "https://mapd714server.onrender.com/patients"
+    val postPatient = "https://patsurikukoserver.herokuapp.com/patients"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
